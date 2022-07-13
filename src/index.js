@@ -1,17 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { App } from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootElement = document.getElementById("root");
+const shadowRoot = rootElement.attachShadow({ mode: "open" });
+const styleTag = document.createElement("style");
+styleTag.innerHTML = `
+  p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+  }
+`;
+shadowRoot.appendChild(styleTag);
+const linkTag = document.createElement("link");
+linkTag.setAttribute("rel", "stylesheet");
+linkTag.setAttribute(
+  "href",
+  "https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+);
+shadowRoot.appendChild(linkTag);
+const root = ReactDOM.createRoot(shadowRoot);
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>
+        One Ring to rule them all, One Ring to find them,
+        <br />
+        One Ring to bring them all and in the darkness bind them
+        <br />
+        In the Land of Mordor where the Shadows lie.
+      </p>
     </div>
   );
 }
 
-export default App;
+export { App };
